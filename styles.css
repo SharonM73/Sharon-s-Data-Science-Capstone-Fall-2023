@@ -1,0 +1,89 @@
+body {
+    background-color: #201832;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: left; /* Changed from center to left */
+    margin-top: 50px;
+    padding-left: 20px; /* Added padding to push content away from the edge */
+}
+
+header {
+    background-color: #2e2839;
+    padding: 10px 0%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 90%;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a.active {
+    border-bottom: 2px solid #FFD700;
+}
+
+nav a {
+    color: #FFD700;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: #673AB7;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0%;
+        background-color: #2e2839;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.active {
+        display: flex;
+    }
+}
+
+section {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: 40px;
+    margin-top: 80px; /* To compensate for fixed header */
+}
+
+section.active {
+    display: block;
+    opacity: 1;
+}
+
+footer {
+    background-color: #673AB7;
+    color: white;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 10%;
+    text-align: end/* Keeping the footer centered */
+}
